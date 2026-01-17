@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: venda-api
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/venda_api?useTimezone=true&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+          lob:
+            non_contextual_creation: true
+
+  security:
+    user:
+      name: dev
+      password: 735ac83f-4ce5-4880-969c-a5a9d4039ac1
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: gresslerapi@gmail.com
+    password: "sdcf ebtq davs zdkx"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+server:
+  port: ${PORTA:9091}
+
+logging:
+  file:
+    name: logs/venda-api.log
+  level:
+    root: INFO
+    com:
+      dev:
+        venda:
+          api: DEBUG
